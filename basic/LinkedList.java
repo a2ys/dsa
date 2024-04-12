@@ -9,7 +9,9 @@ class Node {
 }
 
 class LinkedList {
-    public LinkedList() {
+    private Node head;
 
+    public LinkedList() {
+        this.head = head;
     }
 }
