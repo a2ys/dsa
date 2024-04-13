@@ -23,14 +23,18 @@ public class LinkedList {
 
     public void insertAtEnd(int val) {
         Node newNode = new Node(val);
+
         if (head == null) {
             head = newNode;
             return;
         }
+
         Node current = head;
+
         while (current.next != null) {
             current = current.next;
         }
+
         current.next = newNode;
     }
 
@@ -62,6 +66,7 @@ public class LinkedList {
             System.out.print(current.val + " ");
             current = current.next;
         }
+
         System.out.println();
     }
 }
