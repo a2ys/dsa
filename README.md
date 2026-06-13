@@ -4,7 +4,7 @@ i'm choosing java btw :) do not hate me pls
 
 if you want you can follow the same
 
-#### Arrays + Hashing
+### Arrays + Hashing
 
 1. Two Sum
 2. Contains Duplicate
@@ -22,7 +22,7 @@ if you want you can follow the same
 14. Rotate Image
 15. Encode Decode Strings
 
-#### Two Pointers
+### Two Pointers
 
 1. Valid Palindrome
 2. Two Sum II
@@ -35,7 +35,7 @@ if you want you can follow the same
 9. Boats to Save People
 10. Partition Labels
 
-#### Sliding Window
+### Sliding Window
 
 1. Longest Substring Without Repeating Characters
 2. Longest Repeating Character Replacement
@@ -48,7 +48,7 @@ if you want you can follow the same
 9. Maximum Erasure Value
 10. Subarrays With K Distinct
 
-#### Binary Search
+### Binary Search
 
 1. Binary Search
 2. Search Insert Position
@@ -61,7 +61,7 @@ if you want you can follow the same
 9. Median of Two Sorted Arrays
 10. Split Array Largest Sum
 
-#### Linked List
+### Linked List
 
 1. Reverse Linked List
 2. Merge Two Sorted Lists
@@ -74,7 +74,7 @@ if you want you can follow the same
 9. Merge K Lists
 10. LRU Cache
 
-#### Trees
+### Trees
 
 1. Max Depth
 2. Diameter
@@ -92,7 +92,7 @@ if you want you can follow the same
 14. Construct Tree
 15. Serialize Deserialize Tree
 
-#### Graphs
+### Graphs
 
 1. Number of Islands
 2. Max Area Island
@@ -110,7 +110,7 @@ if you want you can follow the same
 14. Reconstruct Itinerary
 15. Network Delay Time
 
-#### Heap
+### Heap
 
 1. Kth Largest
 2. Top K Frequent
@@ -123,7 +123,7 @@ if you want you can follow the same
 9. IPO
 10. Smallest Range
 
-#### Intervals
+### Intervals
 
 1. Merge Intervals
 2. Insert Interval
@@ -134,7 +134,7 @@ if you want you can follow the same
 7. Employee Free Time
 8. Interval Intersection
 
-#### Greedy
+### Greedy
 
 1. Jump Game
 2. Jump Game II
@@ -145,7 +145,7 @@ if you want you can follow the same
 7. Partition Labels
 8. Valid Parenthesis String
 
-#### Backtracking
+### Backtracking
 
 1. Subsets
 2. Subsets II
@@ -157,7 +157,7 @@ if you want you can follow the same
 8. Palindrome Partitioning
 9. N Queens
 
-#### DP
+### DP
 
 1. Climbing Stairs
 2. House Robber
