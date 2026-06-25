@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 
 class Node {
@@ -14,71 +13,12 @@ class Node {
         this.key = key;
         this.val = val;
     }
-
-    Node(int key, int val, Node next, Node prev) {
-        this.val = val;
-        this.val = val;
-        this.next = next;
-        this.prev = prev;
-    }
-}
-
-class Deque {
-
-    ArrayList<Node> list;
-    Node beginning;
-    Node end;
-
-    Deque() {
-        this.list = new ArrayList<>();
-        this.beginning = new Node();
-        this.end = new Node();
-    }
-
-    Node insertAtBeginning(int key, int val) {
-        Node nodeToInsert = new Node(key, val);
-        nodeToInsert.next = this.beginning;
-        this.beginning.prev = nodeToInsert;
-        this.beginning = nodeToInsert;
-
-        return this.beginning;
-    }
-
-    Node insertAtEnd(Node node) {
-        node.prev = this.end;
-        this.end.next = node;
-        node.next = null;
-        this.end = node;
-
-        return node;
-    }
-
-    Node insertAtEnd(int key, int val) {
-        Node nodeToInsert = new Node(key, val);
-        nodeToInsert.prev = this.end;
-        this.end.next = nodeToInsert;
-        this.end = nodeToInsert;
-
-        return this.end;
-    }
-
-    void removeBeginning() {
-        Node temp = this.beginning.next;
-        this.beginning = temp;
-        temp.prev = null;
-    }
-
-    void removeEnd() {
-        Node temp = this.end.prev;
-        this.end = temp;
-        temp.next = null;
-    }
 }
 
 class LRUCache {
 
     private int capacity;
-    private Deque deque;
+    private Node HEAD, TAIL;
     private HashMap<Integer, Node> hashMap;
 
     private void remove(Node node) {
@@ -87,32 +27,58 @@ class LRUCache {
 
         prevNode.next = nextNode;
         nextNode.prev = prevNode;
+
+        node.prev = null;
+        node.next = null;
+    }
+
+    private void addAtEnd(Node node) {
+        Node prevEnd = TAIL.prev;
+        prevEnd.next = node;
+        node.prev = prevEnd;
+        node.next = TAIL;
+        TAIL.prev = node;
     }
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
-        this.deque = new Deque();
         this.hashMap = new HashMap<>();
+        this.HEAD = new Node();
+        this.TAIL = new Node();
+        this.HEAD.next = this.TAIL;
+        this.TAIL.prev = this.HEAD;
     }
 
     public int get(int key) {
-        if (!hashMap.containsKey(key)) return -1;
+        Node accessedNode = this.hashMap.get(key);
+        if (accessedNode == null) return -1;
 
-        Node node = hashMap.get(key);
-        remove(node);
-        deque.insertAtEnd(node);
-        return node.val;
+        remove(accessedNode);
+        addAtEnd(accessedNode);
+
+        return accessedNode.val;
     }
 
     public void put(int key, int value) {
-        if (hashMap.size() == capacity) {
-            deque.removeBeginning();
-            hashMap.remove(key);
-            Node end = deque.insertAtEnd(key, value);
-            hashMap.put(key, end);
-        } else {
-            Node start = deque.insertAtEnd(key, value);
-            hashMap.put(key, start);
+        if (capacity == 0) return;
+
+        Node newNode = this.hashMap.get(key);
+        if (newNode != null) {
+            newNode.val = value;
+            remove(newNode);
+            addAtEnd(newNode);
+
+            return;
         }
+
+        if (this.hashMap.size() == capacity) {
+            Node victim = this.HEAD.next;
+            remove(victim);
+            this.hashMap.remove(victim.key);
+        }
+
+        newNode = new Node(key, value);
+        this.hashMap.put(key, newNode);
+        addAtEnd(newNode);
     }
 }
