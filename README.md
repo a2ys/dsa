@@ -6,7 +6,7 @@ i'm choosing java btw :) do not hate me pls
 
 if you want you can follow the same
 
-a tracker was made by my friend @puang59 recently, visit it here to track as well: [](https://lc.puang.in).
+a tracker was made by my friend @puang59 recently, visit it [here](https://lc.puang.in) to track as well.
 
 ### Arrays + Hashing
 
